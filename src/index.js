@@ -9,6 +9,6 @@ app.use(Middlewares.JSON)
 
 app.router(taskController)
 
-app.start(3001, (port) => {
+app.start(3333, (port) => {
     console.log(`Server is running on port ${port}`)
 })
