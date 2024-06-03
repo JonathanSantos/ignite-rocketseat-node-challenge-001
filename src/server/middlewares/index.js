@@ -1,4 +1,4 @@
-async function JSON (req, res) {
+async function json (req, res) {
   const bufferBody = [];
 
   for await (const chunk of req) {
@@ -17,5 +17,5 @@ async function JSON (req, res) {
 }
 
 export const Middlewares = {
-  JSON
+  JSON: json
 }

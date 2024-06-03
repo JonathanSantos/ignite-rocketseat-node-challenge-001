@@ -12,7 +12,7 @@ export function extractQueryParams(query) {
     .substr(1)
     .split('&')
     .reduce((acc, item) => {
-      const [key, value] = item.split('=')
+      const [key, value] = decodeURI(item).split('=')
 
       return {
         ...acc,

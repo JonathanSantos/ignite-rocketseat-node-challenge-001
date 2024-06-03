@@ -1,6 +1,6 @@
 import fs from 'node:fs/promises'
 
-const databasePath = new URL('../db.json', import.meta.url)
+const databasePath = new URL('../../db.json', import.meta.url)
 
 export class Database {
   #database = {}
@@ -26,14 +26,14 @@ export class Database {
     return this.#database[table] ?? []
   }
 
-  insert (table, data) {
+  async insert (table, data) {
     if (Array.isArray(this.#database[table])) {
       this.#database[table].push(data)
     } else {
       this.#database[table] = [data]
     }
 
-    this.#persist()
+    await this.#persist()
   }
 
   delete (table, id) {
