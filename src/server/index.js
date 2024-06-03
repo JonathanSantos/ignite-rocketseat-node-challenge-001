@@ -4,11 +4,10 @@ import { Routes } from './routes/index.js'
 export class Server {
   #server = null
   #middlewares = []
-  routes = null
+  routes = new Routes()
 
   use (middleware) {
     this.#middlewares.push(middleware)
-    this.routes = new Routes()
 
     return this
   }
